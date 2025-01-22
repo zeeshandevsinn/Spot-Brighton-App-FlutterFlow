@@ -682,33 +682,11 @@ class _Auth1WidgetState extends State<Auth1Widget>
                                                             ),
                                                           });
 
-                                                          context.goNamedAuth(
-                                                            'Auth1',
-                                                            context.mounted,
-                                                            queryParameters: {
-                                                              'tabIndex':
-                                                                  serializeParam(
-                                                                1,
-                                                                ParamType.int,
-                                                              ),
-                                                            }.withoutNulls,
-                                                            extra: <String,
-                                                                dynamic>{
-                                                              kTransitionInfoKey:
-                                                                  TransitionInfo(
-                                                                hasTransition:
-                                                                    true,
-                                                                transitionType:
-                                                                    PageTransitionType
-                                                                        .fade,
-                                                                duration: Duration(
-                                                                    milliseconds:
-                                                                        100),
-                                                              ),
-                                                            },
-                                                          );
-
-                                                          ScaffoldMessenger.of(
+                                                          context.pushNamedAuth(
+                                                                'sendVerificationEmail',
+                                                                context
+                                                                    .mounted);
+                                                                    ScaffoldMessenger.of(
                                                                   context)
                                                               .showSnackBar(
                                                             SnackBar(
